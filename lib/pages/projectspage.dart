@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/customwidgets/active_project_widget.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class ProjectsPageState extends State<ProjectsPage> {
           child: Center(
             child: Column(
               children: [
+                // profile box
                 Column(
                   children: [
                     Container(width: screenWidth, height: container1height,
@@ -90,8 +92,10 @@ class ProjectsPageState extends State<ProjectsPage> {
                     )
                   ],
                 ),
+
+                // tasks box
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.only(left: 20, top: 10),
                   child: Column(
                       children: [
                         Padding(
@@ -218,28 +222,46 @@ class ProjectsPageState extends State<ProjectsPage> {
                       ],
                   ),
                 ),
+
+                // active box
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Active Projects",
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Active Projects",
+                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                        ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            
-                          ),
-                          Container(
+                      Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ActiveProject(
+                              percentage: "25%",
+                              projectName: "Medical App",
+                              hoursProgress: "6 hours progress",
+                              containerColor: Colors.teal,
+                              width: (screenWidth * 0.4),
+                              height: (container1height * 1.2)
+                              ),
 
-                          )
-                        ],
+                              ActiveProject(
+                              percentage: "60%",
+                              projectName: "Making History Notes",
+                              hoursProgress: "20 hours progress",
+                              containerColor: Colors.red,
+                              width: (screenWidth * 0.4),
+                              height: (container1height * 1.2)
+                              )
+                          ],
+                        ),
                       )
                     ],
                   ),
