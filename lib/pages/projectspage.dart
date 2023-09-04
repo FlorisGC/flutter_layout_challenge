@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_challenge/customwidgets/active_project_widget.dart';
+import 'package:flutter_layout_challenge/customwidgets/task_widget.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -123,100 +124,27 @@ class ProjectsPageState extends State<ProjectsPage> {
                           ),
                         ),
                         Column(
-                          children: [
-                            Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.red,
-                                      ),
-                                      child: IconButton(icon: const Icon(Icons.battery_0_bar, color: Colors.white,),
-                                      onPressed: () {
-                                        //toDoPressed();
-                                      }
-                                      ,)
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: const [
-                                          Text(
-                                            "To Do",
-                                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)
-                                            ),
-                                        Text("5 tasks now, 1 started")
-                                      ],
-                                    ),
+                          children: const [
+                            Task(
+                              iconBackground: Colors.red,
+                              icon: Icon(Icons.battery_0_bar, color: Colors.white,),
+                              title: "To Do",
+                              amountOfTasks: "5 tasks now, 1 started"
+                              ),
+
+                              Task(
+                                iconBackground: Colors.green,
+                                icon: Icon(Icons.battery_4_bar, color: Colors.white,),
+                                title: "In Progress",
+                                amountOfTasks: "1 tasks now, 1 started"
+                                ),
+
+                                Task(
+                                  iconBackground: Colors.blue,
+                                  icon: Icon(Icons.battery_full, color: Colors.white,),
+                                  title: "Done",
+                                  amountOfTasks: "18 tasks now, 13 started"
                                   )
-                                ],
-                            ),
-                            Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.green,
-                                      ),
-                                      child: IconButton(icon: const Icon(Icons.battery_4_bar, color: Colors.white,),
-                                      onPressed: () {
-                                        //toDoPressed();
-                                      }
-                                      ,)
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: const [
-                                          Text(
-                                            "In Progress",
-                                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)
-                                            ),
-                                        Text("1 tasks now, 1 started")
-                                      ],
-                                    ),
-                                  )
-                                ],
-                            ),
-                            Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.blue,
-                                      ),
-                                      child: IconButton(icon: const Icon(Icons.battery_full, color: Colors.white,),
-                                      onPressed: () {
-                                        //toDoPressed();
-                                      }
-                                      ,)
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: const [
-                                          Text(
-                                            "Done",
-                                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)
-                                            ),
-                                        Text("18 tasks now, 13 started")
-                                      ],
-                                    ),
-                                  )
-                                ],
-                            ),
                           ],
                         )
                       ],
