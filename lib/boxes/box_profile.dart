@@ -1,34 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/boxes/box_my_tasks.dart';
-import 'package:flutter_layout_challenge/boxes/box_active_projects.dart';
-import 'package:flutter_layout_challenge/boxes/box_counter_button.dart';
 
-class ProjectsPage extends StatefulWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+class BoxProfile extends StatelessWidget {
+  const BoxProfile({super.key});
 
-  @override
-  ProjectsPageState createState() => ProjectsPageState();
-}
-
-class ProjectsPageState extends State<ProjectsPage> {
-  String temp = "";
-  String name = "Sourav Suman";
-  String job = "App Developer";
+    
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     double container1height = screenHeight * 0.25;
     double pfpWidth = screenHeight * 0.1;
 
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            // profile box
-            Column(
+    return Column(
               children: [
                 Container(
                     width: screenWidth,
@@ -73,14 +58,14 @@ class ProjectsPageState extends State<ProjectsPage> {
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
+                                  children: const [
                                     Text(
-                                      name,
-                                      style: const TextStyle(
+                                      "Brendan Deneve",
+                                      style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ),
-                                    Text(job)
+                                    Text("App Devolper")
                                   ],
                                 )
                               ],
@@ -90,21 +75,10 @@ class ProjectsPageState extends State<ProjectsPage> {
                       ),
                     ))
               ],
-            ),
+            );
 
-            SizedBox(
-              height: screenHeight * 0.75,
-              child: SingleChildScrollView(
-                child: Column(children: const [
-                  BoxMyTasks(),
-                  BoxActiveProjects(),
-                  BoxCounterButton()
-                ]),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+
   }
+
+
 }
