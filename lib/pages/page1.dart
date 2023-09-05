@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_challenge/boxes/box_my_tasks.dart';
 import 'package:flutter_layout_challenge/boxes/box_active_projects.dart';
-import 'package:flutter_layout_challenge/boxes/box_counter_button.dart';
 import 'package:flutter_layout_challenge/boxes/box_profile.dart';
 
 class ProjectsPage extends StatefulWidget {
@@ -34,8 +33,6 @@ class ProjectsPageState extends State<ProjectsPage> {
                   BoxMyTasks(),
 
                   BoxActiveProjects(),
-
-                  BoxCounterButton()
 
                 ]),
               ),

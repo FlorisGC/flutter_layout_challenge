@@ -31,19 +31,9 @@ class BoxProfile extends StatelessWidget {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconButton(
-                                  icon: const Icon(Icons.menu),
-                                  onPressed: () {
-                                    //menuPressed();
-                                  },
-                                ),
-                                IconButton(
-                                  icon: const Icon(Icons.search),
-                                  onPressed: () {
-                                    //searchPressed();
-                                  },
-                                )
+                              children: const [
+                                Icon(Icons.menu, color: Colors.black),
+                                Icon(Icons.search, color: Colors.black)
                               ],
                             ),
                             Row(
@@ -65,7 +55,7 @@ class BoxProfile extends StatelessWidget {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ),
-                                    Text("App Devolper")
+                                    Text("App Developer")
                                   ],
                                 )
                               ],

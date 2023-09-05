@@ -11,6 +11,8 @@ class BoxMyTasks extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     //double screenWidth = MediaQuery.of(context).size.width;
 
+    double iconSize = 50;
+
     return Padding(
                   padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
                   child: Column(
@@ -25,16 +27,13 @@ class BoxMyTasks extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                                 ),
                                 Container(
+                                    width: iconSize,
+                                    height: iconSize,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Colors.teal
                                   ),
-                                  child: IconButton(
-                                    icon: const Icon(Icons.date_range_rounded, color: Colors.white,),
-                                    onPressed: () {
-                                      //datePressed();
-                                    },
-                                  ),
+                                  child: const Icon(Icons.date_range_rounded, color: Colors.white),
                                 ),
                             ],
                           ),
@@ -48,42 +47,42 @@ class BoxMyTasks extends StatelessWidget {
                                   children: const [
                                     Task(
                                       iconBackground: Colors.red,
-                                      icon: Icon(Icons.battery_0_bar, color: Colors.white,),
+                                      icon: Icons.battery_0_bar,
                                       title: "To Do",
                                       amountOfTasks: "5"
                                       ),
                                                       
                                       Task(
                                         iconBackground: Colors.green,
-                                        icon: Icon(Icons.battery_4_bar, color: Colors.white,),
+                                        icon: Icons.battery_4_bar,
                                         title: "In Progress",
                                         amountOfTasks: "1"
                                         ),
                                                       
                                         Task(
                                           iconBackground: Colors.blue,
-                                          icon: Icon(Icons.battery_full, color: Colors.white,),
+                                          icon: Icons.battery_full,
                                           title: "Done",
                                           amountOfTasks: "18"
                                           ),
                             
                                           Task(
                                             iconBackground: Colors.yellow,
-                                            icon: Icon(Icons.ring_volume_outlined, color: Colors.white),
+                                            icon: Icons.ring_volume_outlined,
                                             title: "Ring",
                                             amountOfTasks: "3"
                                             ),
                             
                                           Task(
                                             iconBackground: Colors.purple,
-                                            icon: Icon(Icons.abc, color: Colors.white,),
+                                            icon: Icons.abc,
                                             title: "Favor",
                                             amountOfTasks: "23"
                                             ),
                             
                                             Task(
                                               iconBackground: Colors.grey,
-                                              icon: Icon(Icons.recent_actors, color: Colors.white,),
+                                              icon: Icons.recent_actors,
                                               title: "Protection",
                                               amountOfTasks: "9"
                                               )
