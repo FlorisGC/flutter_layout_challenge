@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/customwidgets/active_project_widget.dart';
-import 'package:flutter_layout_challenge/customwidgets/task_widget.dart';
+import 'package:flutter_layout_challenge/boxes/box_my_tasks.dart';
+import 'package:flutter_layout_challenge/boxes/box_active_projects.dart';
+import 'package:flutter_layout_challenge/boxes/box_counter_button.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -10,195 +11,100 @@ class ProjectsPage extends StatefulWidget {
 }
 
 class ProjectsPageState extends State<ProjectsPage> {
-
   String temp = "";
   String name = "Sourav Suman";
   String job = "App Developer";
 
-
-
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
-  double screenHeight = MediaQuery.of(context).size.height;
-  double container1height = screenHeight * 0.2;
-  
-  double screenWidth = MediaQuery.of(context).size.width;
-  double pfpWidth = screenHeight * 0.1;
+    double container1height = screenHeight * 0.25;
+    double pfpWidth = screenHeight * 0.1;
 
     return Scaffold(
-      	body: SafeArea(
-          child: Center(
-            child: Column(
+      body: Center(
+        child: Column(
+          children: [
+            // profile box
+            Column(
               children: [
-                // profile box
-                Column(
-                  children: [
-                    Container(width: screenWidth, height: container1height,
+                Container(
+                    width: screenWidth,
+                    height: container1height,
                     decoration: const BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)
-                      )
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.menu),
-                                onPressed: () {
-                                  //menuPressed();
-                                },
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.search),
-                                onPressed: () {
-                                  //searchPressed();
-                                },
-                              )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              ClipOval(
-                                child: Image(
-                                  image: const AssetImage('images/pfp.png'),
-                                  width: pfpWidth,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    name,
-                                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                  Text(job)
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-
-                    )
-                  ],
-                ),
-
-                // tasks box
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 10),
-                  child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                "My Tasks",
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                                ),
-                                Container(
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.teal
-                                  ),
-                                  child: IconButton(
-                                    icon: const Icon(Icons.date_range_rounded, color: Colors.white,),
-                                    onPressed: () {
-                                      //datePressed();
-                                    },
-                                  ),
-                                ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          children: const [
-                            Task(
-                              iconBackground: Colors.red,
-                              icon: Icon(Icons.battery_0_bar, color: Colors.white,),
-                              title: "To Do",
-                              amountOfTasks: "5 tasks now, 1 started"
-                              ),
-
-                              Task(
-                                iconBackground: Colors.green,
-                                icon: Icon(Icons.battery_4_bar, color: Colors.white,),
-                                title: "In Progress",
-                                amountOfTasks: "1 tasks now, 1 started"
-                                ),
-
-                                Task(
-                                  iconBackground: Colors.blue,
-                                  icon: Icon(Icons.battery_full, color: Colors.white,),
-                                  title: "Done",
-                                  amountOfTasks: "18 tasks now, 13 started"
-                                  )
-                          ],
-                        )
-                      ],
-                  ),
-                ),
-
-                // active box
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Active Projects",
-                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                        ),
-                      ),
-                      Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30))),
+                    child: SafeArea(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            ActiveProject(
-                              percentage: "25%",
-                              projectName: "Medical App",
-                              hoursProgress: "6 hours progress",
-                              containerColor: Colors.teal,
-                              width: (screenWidth * 0.4),
-                              height: (container1height * 1.2)
-                              ),
-
-                              ActiveProject(
-                              percentage: "60%",
-                              projectName: "Making History Notes",
-                              hoursProgress: "20 hours progress",
-                              containerColor: Colors.red,
-                              width: (screenWidth * 0.4),
-                              height: (container1height * 1.2)
-                              )
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.menu),
+                                  onPressed: () {
+                                    //menuPressed();
+                                  },
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.search),
+                                  onPressed: () {
+                                    //searchPressed();
+                                  },
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ClipOval(
+                                  child: Image(
+                                    image: const AssetImage('images/pfp.png'),
+                                    width: pfpWidth,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      name,
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                                    Text(job)
+                                  ],
+                                )
+                              ],
+                            )
                           ],
                         ),
-                      )
-                    ],
-                  ),
-                )
+                      ),
+                    ))
               ],
             ),
-            
-          ),
+
+            SizedBox(
+              height: screenHeight * 0.75,
+              child: SingleChildScrollView(
+                child: Column(children: const [
+                  BoxMyTasks(),
+                  BoxActiveProjects(),
+                  BoxCounterButton()
+                ]),
+              ),
+            ),
+          ],
         ),
+      ),
     );
   }
 }

@@ -40,7 +40,7 @@ class Task extends StatelessWidget {
                                             title,
                                             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)
                                             ),
-                                        Text(amountOfTasks)
+                                        Text("$amountOfTasks task(s)")
                                       ],
                                     ),
                                   )
