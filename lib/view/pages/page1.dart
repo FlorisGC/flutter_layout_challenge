@@ -13,37 +13,25 @@ class ProjectsPage extends StatefulWidget {
 }
 
 class ProjectsPageState extends State<ProjectsPage> {
-
   @override
   Widget build(BuildContext context) {
-
-    
-
     return Scaffold(
       body: Center(
         child: Column(
           children: [
-
             SizedBox(
-              height: screenHeight(context) * 0.25,
-              child: const BoxProfile()
-              ),
-
+                height: screenHeight(context) * 0.25,
+                child: const BoxProfile()),
             SizedBox(
               height: screenHeight(context) * 0.75,
-              child: SingleChildScrollView(
-                child: Column(children: const [
-
+              child: const SingleChildScrollView(
+                child: Column(children: [
                   BoxMyTasks(),
-
                   BoxActiveProjects(),
-
-                  BoxCounter()
-
+                  BoxCounter(),
                 ]),
               ),
             )
-
           ],
         ),
       ),
