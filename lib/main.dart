@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/pages/page1.dart';
+import 'package:flutter_layout_challenge/view/pages/page1.dart';
 
 void main() {
   runApp(const MainApp());
