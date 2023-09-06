@@ -4,7 +4,7 @@ class Task extends StatelessWidget {
   final Color iconBackground;
   final IconData icon;
   final String title;
-  final String amountOfTasks;
+  final int amountOfTasks;
 
   const Task(
       {super.key,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/boxes/box_my_tasks.dart';
-import 'package:flutter_layout_challenge/boxes/box_active_projects.dart';
-import 'package:flutter_layout_challenge/boxes/box_profile.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_my_tasks.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_active_projects.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_profile.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
+import 'package:flutter_layout_challenge/controller/box_counter.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({Key? key}) : super(key: key);
@@ -14,7 +16,6 @@ class ProjectsPageState extends State<ProjectsPage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
 
     
 
@@ -23,16 +24,21 @@ class ProjectsPageState extends State<ProjectsPage> {
         child: Column(
           children: [
 
-            const BoxProfile(),
+            SizedBox(
+              height: screenHeight(context) * 0.25,
+              child: const BoxProfile()
+              ),
 
             SizedBox(
-              height: screenHeight * 0.75,
+              height: screenHeight(context) * 0.75,
               child: SingleChildScrollView(
                 child: Column(children: const [
 
                   BoxMyTasks(),
 
                   BoxActiveProjects(),
+
+                  BoxCounter()
 
                 ]),
               ),

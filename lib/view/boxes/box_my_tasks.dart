@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/customwidgets/task_widget.dart';
+import 'package:flutter_layout_challenge/view/customwidgets/task_widget.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
 
 class BoxMyTasks extends StatelessWidget {
   const BoxMyTasks({super.key});
@@ -8,8 +9,6 @@ class BoxMyTasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double screenHeight = MediaQuery.of(context).size.height;
-    //double screenWidth = MediaQuery.of(context).size.width;
 
     double iconSize = 50;
 
@@ -39,7 +38,7 @@ class BoxMyTasks extends StatelessWidget {
                           ),
                         ),
                           SizedBox(
-                            height: screenHeight * 0.3,
+                            height: screenHeight(context) * 0.3,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 10, right: 10),
                               child: SingleChildScrollView(
@@ -49,42 +48,42 @@ class BoxMyTasks extends StatelessWidget {
                                       iconBackground: Colors.red,
                                       icon: Icons.battery_0_bar,
                                       title: "To Do",
-                                      amountOfTasks: "5"
+                                      amountOfTasks: 5
                                       ),
                                                       
                                       Task(
                                         iconBackground: Colors.green,
                                         icon: Icons.battery_4_bar,
                                         title: "In Progress",
-                                        amountOfTasks: "1"
+                                        amountOfTasks: 1
                                         ),
                                                       
                                         Task(
                                           iconBackground: Colors.blue,
                                           icon: Icons.battery_full,
                                           title: "Done",
-                                          amountOfTasks: "18"
+                                          amountOfTasks: 18
                                           ),
                             
                                           Task(
                                             iconBackground: Colors.yellow,
                                             icon: Icons.ring_volume_outlined,
                                             title: "Ring",
-                                            amountOfTasks: "3"
+                                            amountOfTasks: 3
                                             ),
                             
                                           Task(
                                             iconBackground: Colors.purple,
                                             icon: Icons.abc,
                                             title: "Favor",
-                                            amountOfTasks: "23"
+                                            amountOfTasks: 23
                                             ),
                             
                                             Task(
                                               iconBackground: Colors.grey,
                                               icon: Icons.recent_actors,
                                               title: "Protection",
-                                              amountOfTasks: "9"
+                                              amountOfTasks: 9
                                               )
                                   ],
                                 ),

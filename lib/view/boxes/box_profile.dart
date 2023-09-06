@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
 
 class BoxProfile extends StatelessWidget {
   const BoxProfile({super.key});
@@ -8,16 +9,12 @@ class BoxProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-    double container1height = screenHeight * 0.25;
-    double pfpWidth = screenHeight * 0.1;
 
     return Column(
               children: [
                 Container(
-                    width: screenWidth,
-                    height: container1height,
+                    width: screenWidth(context),
+                    height: screenHeight(context) * 0.25,
                     decoration: const BoxDecoration(
                         color: Colors.orange,
                         borderRadius: BorderRadius.only(
@@ -42,7 +39,7 @@ class BoxProfile extends StatelessWidget {
                                 ClipOval(
                                   child: Image(
                                     image: const AssetImage('images/pfp.png'),
-                                    width: pfpWidth,
+                                    width: screenHeight(context) * 0.1,
                                     fit: BoxFit.cover,
                                   ),
                                 ),

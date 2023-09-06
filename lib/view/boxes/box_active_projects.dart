@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/customwidgets/active_project_widget.dart';
+import 'package:flutter_layout_challenge/view/customwidgets/active_project_widget.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
 
 class BoxActiveProjects extends StatelessWidget {
   const BoxActiveProjects({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    //double screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, top: 25),
@@ -26,7 +25,7 @@ class BoxActiveProjects extends StatelessWidget {
           ),
           Center(
             child: SizedBox(
-              height: screenHeight * 0.25,
+              height: screenHeight(context) * 0.25,
               child: Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: SingleChildScrollView(
@@ -36,37 +35,37 @@ class BoxActiveProjects extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           ActiveProject(
-                            percentage: "25",
+                            percentage: 25,
                             projectName: "Medical App",
-                            hoursProgress: "6",
+                            hoursProgress: 6,
                             containerColor: Colors.teal,
                           ),
                           ActiveProject(
-                            percentage: "60",
+                            percentage: 60,
                             projectName: "Making History Notes",
-                            hoursProgress: "20",
+                            hoursProgress: 20,
                             containerColor: Colors.red,
                           )
                         ],
                       ),
                       const ActiveProject(
-                          percentage: "47",
+                          percentage: 47,
                           projectName: "Souls",
-                          hoursProgress: "13",
+                          hoursProgress: 13,
                           containerColor: Colors.black),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
                           ActiveProject(
-                            percentage: "36",
+                            percentage: 36,
                             projectName: "Olympus",
-                            hoursProgress: "9",
+                            hoursProgress: 9,
                             containerColor: Colors.pink,
                           ),
                           ActiveProject(
-                            percentage: "91",
+                            percentage: 91,
                             projectName: "The Search",
-                            hoursProgress: "29",
+                            hoursProgress: 29,
                             containerColor: Colors.blueGrey,
                           )
                         ],

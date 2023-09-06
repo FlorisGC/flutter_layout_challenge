@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
 
 class ActiveProject extends StatelessWidget {
 
 
   
-  final String percentage;
+  final int percentage;
   final String projectName;
-  final String hoursProgress;
+  final int hoursProgress;
 
   final Color containerColor;
 
@@ -21,12 +22,9 @@ class ActiveProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Padding(
-      padding: EdgeInsets.only(bottom: screenHeight * 0.02, top: screenHeight * 0.02),
-      child: Container( width: (screenWidth * 0.4), height: (screenHeight * 0.2),
+      padding: EdgeInsets.only(bottom: screenHeight(context) * 0.02, top: screenHeight(context) * 0.02),
+      child: Container( width: (screenWidth(context) * 0.4), height: (screenHeight(context) * 0.2),
                               decoration: BoxDecoration(
                                 color: containerColor,
                                 borderRadius: const BorderRadius.all(Radius.circular(30))
