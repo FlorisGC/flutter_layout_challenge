@@ -22,8 +22,8 @@ class Task extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10),
           child: Container(
-            width: iconSize,
-            height: iconSize,
+              width: iconSize,
+              height: iconSize,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: iconBackground,

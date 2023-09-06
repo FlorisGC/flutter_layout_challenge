@@ -7,7 +7,6 @@ class BoxActiveProjects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, top: 25),
       child: Column(
@@ -26,14 +25,14 @@ class BoxActiveProjects extends StatelessWidget {
           Center(
             child: SizedBox(
               height: screenHeight(context) * 0.25,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
+              child: const Padding(
+                padding: EdgeInsets.only(left: 15, right: 15),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           ActiveProject(
                             percentage: 25,
                             projectName: "Medical App",
@@ -48,14 +47,14 @@ class BoxActiveProjects extends StatelessWidget {
                           )
                         ],
                       ),
-                      const ActiveProject(
+                      ActiveProject(
                           percentage: 47,
                           projectName: "Souls",
                           hoursProgress: 13,
                           containerColor: Colors.black),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           ActiveProject(
                             percentage: 36,
                             projectName: "Olympus",

@@ -1,12 +1,16 @@
 name: flutter_layout_challenge
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
+  flutter_image_picker:
+    git:
+      url: https://github.com/Iconica-Development/flutter_image_picker
+      ref: 1.0.4
   flutter:
     sdk: flutter
 

@@ -8,7 +8,6 @@ class BoxCounter extends StatefulWidget {
 }
 
 class BoxCounterState extends State<BoxCounter> {
-
   double iconBackgroundSize = 48;
   int count = 0;
 
@@ -22,24 +21,21 @@ class BoxCounterState extends State<BoxCounter> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(iconBackgroundSize),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text("$count"),
-          Container(
-            width: iconBackgroundSize,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        Text("$count"),
+        Container(
+          width: iconBackgroundSize,
+          decoration:
+              const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+          child: IconButton(
+            icon: const Icon(
+              Icons.plus_one_rounded,
+              color: Colors.white,
             ),
-            child: IconButton(
-              icon: const Icon(Icons.plus_one_rounded, color: Colors.white,),
-              onPressed: () => countUp(),
-            ),
-          )
-        ]
-        ),
+            onPressed: () => countUp(),
+          ),
+        )
+      ]),
     );
   }
-
 }
