@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/screensize.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
 import 'package:flutter_layout_challenge/view/customwidgets/active_project_widget.dart';
 
-class BoxActiveProjects extends StatelessWidget {
-  const BoxActiveProjects({super.key});
+class ActiveProjects extends StatelessWidget {
+  const ActiveProjects({super.key});
 
   @override
   Widget build(BuildContext context) => Padding(

@@ -1,26 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/controller/mytasksbox_addons/tasksbutton.dart';
-import 'package:flutter_layout_challenge/screensize.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
 import 'package:flutter_layout_challenge/view/customwidgets/task_widget.dart';
 
-class BoxMyTasks extends StatelessWidget {
-  const BoxMyTasks({super.key});
+class MyTasks extends StatelessWidget {
+  const MyTasks({super.key});
 
   @override
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 15),
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'My Tasks',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  TasksButton(),
+                  Container(
+                    width: iconBackgroundSize,
+                    height: iconBackgroundSize,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.teal,
+                    ),
+                    child: const Icon(
+                      Icons.date_range_rounded,
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
             ),

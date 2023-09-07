@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
 
 class Task extends StatelessWidget {
   const Task({
@@ -14,43 +15,39 @@ class Task extends StatelessWidget {
   final int amountOfTasks;
 
   @override
-  Widget build(BuildContext context) {
-    var iconSize = 50.0;
-
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: Container(
-            width: iconSize,
-            height: iconSize,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: iconBackground,
-            ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
+  Widget build(BuildContext context) => Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              width: iconBackgroundSize,
+              height: iconBackgroundSize,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: iconBackground,
               ),
-              Text('$amountOfTasks task(s)'),
-            ],
+              child: Icon(
+                icon,
+                color: Colors.white,
+              ),
+            ),
           ),
-        ),
-      ],
-    );
-  }
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
+                Text('$amountOfTasks task(s)'),
+              ],
+            ),
+          ),
+        ],
+      );
 }

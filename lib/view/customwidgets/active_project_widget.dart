@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/screensize.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
 
 class ActiveProject extends StatelessWidget {
   const ActiveProject({
@@ -12,7 +12,6 @@ class ActiveProject extends StatelessWidget {
   final int percentage;
   final String projectName;
   final int hoursProgress;
-
   final Color containerColor;
 
   @override

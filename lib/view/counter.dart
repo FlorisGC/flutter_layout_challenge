@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/controller/functions.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
 
-class BoxCounter extends StatefulWidget {
-  const BoxCounter({super.key});
+class Counter extends StatefulWidget {
+  const Counter({super.key});
 
   @override
-  BoxCounterState createState() => BoxCounterState();
+  CounterState createState() => CounterState();
 }
 
-class BoxCounterState extends State<BoxCounter> {
-  double iconBackgroundSize = 48;
-  int count = 0;
-
-  void countUp() {
-    setState(() {
-      count++;
-    });
-  }
-
+class CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) => Padding(
         padding: EdgeInsets.all(iconBackgroundSize),
@@ -35,7 +28,9 @@ class BoxCounterState extends State<BoxCounter> {
                   Icons.plus_one_rounded,
                   color: Colors.white,
                 ),
-                onPressed: countUp,
+                onPressed: () {
+                  setState(countUp);
+                },
               ),
             ),
           ],
