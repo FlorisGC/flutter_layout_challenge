@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_my_tasks.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_active_projects.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_profile.dart';
-import 'package:flutter_layout_challenge/screensize.dart';
 import 'package:flutter_layout_challenge/controller/box_counter.dart';
+import 'package:flutter_layout_challenge/screensize.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_active_projects.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_my_tasks.dart';
+import 'package:flutter_layout_challenge/view/boxes/box_profile.dart';
 
 class ProjectsPage extends StatefulWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+  const ProjectsPage({super.key});
 
   @override
   ProjectsPageState createState() => ProjectsPageState();
