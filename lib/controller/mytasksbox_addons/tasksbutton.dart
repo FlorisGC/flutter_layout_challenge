@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class TasksButton extends StatelessWidget {
   const TasksButton({super.key});
-  final double iconSize = 50;
+
+  double get iconSize => 50;
 
   @override
   Widget build(BuildContext context) => Container(
