@@ -6,12 +6,10 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
+  const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProjectsPage(),
-    );
-  }
+  Widget build(BuildContext context) => const MaterialApp(
+        home: ProjectsPage(),
+      );
 }

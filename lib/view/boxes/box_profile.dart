@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/controller/profilebox_addons/pfpnamejob.dart';
 import 'package:flutter_layout_challenge/controller/profilebox_addons/search.dart';
 import 'package:flutter_layout_challenge/screensize.dart';
 import 'package:flutter_layout_challenge/controller/profilebox_addons/hamburger.dart';
 
 class BoxProfile extends StatelessWidget {
   const BoxProfile({super.key});
-
-  final String name = "Brendan Deneve";
-  final String job = "App Dev";
 
 
   @override
@@ -36,7 +32,6 @@ class BoxProfile extends StatelessWidget {
                         ProfileSearch()
                       ],
                     ),
-                    ProfilePfpNameJob()
                   ],
                 ),
               ),
