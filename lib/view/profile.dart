@@ -1,7 +1,6 @@
 //import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/controller/functions.dart';
 //import 'package:flutter_image_picker/flutter_image_picker.dart';
 import 'package:flutter_layout_challenge/model/vars.dart';
 
@@ -37,16 +36,12 @@ class _ProfileState extends State<Profile> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: () {
-                            setState(menuClick);
-                          },
+                          onPressed: () {},
                           icon: const Icon(Icons.menu),
                           color: Colors.black,
                         ),
                         IconButton(
-                          onPressed: () {
-                            setState(searchClick);
-                          },
+                          onPressed: () {},
                           icon: const Icon(Icons.search),
                           color: Colors.black,
                         ),
