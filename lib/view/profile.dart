@@ -1,7 +1,4 @@
-//import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-//import 'package:flutter_image_picker/flutter_image_picker.dart';
 import 'package:flutter_layout_challenge/model/vars.dart';
 
 class Profile extends StatefulWidget {
@@ -12,7 +9,6 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  // Future<void> _pickImage() async {
   @override
   Widget build(BuildContext context) => Column(
         children: [
