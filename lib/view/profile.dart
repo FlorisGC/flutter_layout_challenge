@@ -10,6 +10,16 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController jobController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    nameController.text = name;
+    jobController.text = job;
+  }
+
   @override
   Widget build(BuildContext context) => Column(
         children: [
@@ -33,12 +43,18 @@ class _ProfileState extends State<Profile> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await showChangeNameDialog(context, nameController);
+                            setState(() {});
+                          },
                           icon: const Icon(Icons.menu),
                           color: Colors.black,
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await showChangeJobDialog(context, jobController);
+                            setState(() {});
+                          },
                           icon: const Icon(Icons.search),
                           color: Colors.black,
                         ),
@@ -72,13 +88,13 @@ class _ProfileState extends State<Profile> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              name,
+                              nameController.text,
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),
                             ),
-                            Text(job),
+                            Text(jobController.text),
                           ],
                         ),
                       ],

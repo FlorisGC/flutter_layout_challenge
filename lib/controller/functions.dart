@@ -17,3 +17,63 @@ Future<void> openImagePicker(BuildContext context) async {
     selectedImage = imageInBytes;
   }
 }
+
+Future<void> showChangeNameDialog(
+  BuildContext context,
+  TextEditingController controller,
+) async {
+  await showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: const Text('Change Name'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            controller: controller,
+            decoration: const InputDecoration(
+              labelText: 'New Name',
+            ),
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Future<void> showChangeJobDialog(
+  BuildContext context,
+  TextEditingController controller,
+) async {
+  await showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: const Text('Change Job'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            controller: controller,
+            decoration: const InputDecoration(
+              labelText: 'New Job',
+            ),
+          ),
+          const SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    ),
+  );
+}
