@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_challenge/controller/functions.dart';
 import 'package:flutter_layout_challenge/model/vars.dart';
 
 class Profile extends StatefulWidget {
@@ -46,12 +47,25 @@ class _ProfileState extends State<Profile> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ClipOval(
-                          child: Image.asset(
-                            'images/pfp.png',
-                            height: profileHeight * 0.37,
-                            width: profileHeight * 0.37,
-                            fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () async {
+                            await openImagePicker(context);
+                            setState(() {});
+                          },
+                          child: ClipOval(
+                            child: selectedImage != null
+                                ? Image.memory(
+                                    selectedImage!,
+                                    height: profileHeight * 0.4,
+                                    width: profileHeight * 0.4,
+                                    fit: BoxFit.cover,
+                                  )
+                                : Image.asset(
+                                    'images/pfp.png',
+                                    height: profileHeight * 0.4,
+                                    width: profileHeight * 0.4,
+                                    fit: BoxFit.cover,
+                                  ),
                           ),
                         ),
                         Column(
