@@ -19,11 +19,11 @@ class ProjectsPageState extends State<ProjectsPage> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight(context) * 0.25,
+                height: profileHeight,
                 child: const Profile(),
               ),
               SizedBox(
-                height: screenHeight(context) * 0.75,
+                height: screenHeight(context) - profileHeight,
                 child: const SingleChildScrollView(
                   child: Column(
                     children: [

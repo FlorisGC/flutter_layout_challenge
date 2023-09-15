@@ -14,7 +14,7 @@ class _ProfileState extends State<Profile> {
         children: [
           Container(
             width: screenWidth(context),
-            height: screenHeight(context) * 0.25,
+            height: profileHeight,
             decoration: const BoxDecoration(
               color: Colors.orange,
               borderRadius: BorderRadius.only(
@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
             ),
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.only(left: 12, right: 12),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -49,8 +49,8 @@ class _ProfileState extends State<Profile> {
                         ClipOval(
                           child: Image.asset(
                             'images/pfp.png',
-                            height: screenHeight(context) * 0.1,
-                            width: screenWidth(context) * 0.2,
+                            height: profileHeight * 0.37,
+                            width: profileHeight * 0.37,
                             fit: BoxFit.cover,
                           ),
                         ),

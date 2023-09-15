@@ -16,9 +16,9 @@ class ActiveProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: EdgeInsets.only(
-          bottom: screenHeight(context) * 0.02,
-          top: screenHeight(context) * 0.02,
+        padding: const EdgeInsets.only(
+          left: 4,
+          right: 4,
         ),
         child: Container(
           width: screenWidth(context) * 0.4,

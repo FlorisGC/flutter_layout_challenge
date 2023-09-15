@@ -18,7 +18,7 @@ class Task extends StatelessWidget {
   Widget build(BuildContext context) => Row(
         children: [
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(12),
             child: Container(
               width: iconBackgroundSize,
               height: iconBackgroundSize,

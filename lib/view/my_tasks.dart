@@ -7,12 +7,12 @@ class MyTasks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
+        padding: const EdgeInsets.only(left: 16, top: 4, right: 16),
         child: Column(
           children: [
             Padding(
               padding:
-                  const EdgeInsets.only(left: 5, right: 5, bottom: 5, top: 15),
+                  const EdgeInsets.only(left: 4, right: 4, bottom: 4, top: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -38,7 +38,7 @@ class MyTasks extends StatelessWidget {
             SizedBox(
               height: screenHeight(context) * 0.3,
               child: const Padding(
-                padding: EdgeInsets.only(left: 10, right: 10),
+                padding: EdgeInsets.only(left: 12, right: 12),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
