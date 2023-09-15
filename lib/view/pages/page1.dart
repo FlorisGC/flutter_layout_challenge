@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_my_tasks.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_active_projects.dart';
-import 'package:flutter_layout_challenge/view/boxes/box_profile.dart';
-import 'package:flutter_layout_challenge/screensize.dart';
-import 'package:flutter_layout_challenge/controller/box_counter.dart';
+import 'package:flutter_layout_challenge/model/vars.dart';
+import 'package:flutter_layout_challenge/view/active_projects.dart';
+import 'package:flutter_layout_challenge/view/counter.dart';
+import 'package:flutter_layout_challenge/view/my_tasks.dart';
+import 'package:flutter_layout_challenge/view/profile.dart';
 
 class ProjectsPage extends StatefulWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+  const ProjectsPage({super.key});
 
   @override
   ProjectsPageState createState() => ProjectsPageState();
@@ -19,17 +19,17 @@ class ProjectsPageState extends State<ProjectsPage> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight(context) * 0.25,
-                child: const BoxProfile(),
+                height: profileHeight,
+                child: const Profile(),
               ),
               SizedBox(
-                height: screenHeight(context) * 0.75,
+                height: screenHeight(context) - profileHeight,
                 child: const SingleChildScrollView(
                   child: Column(
                     children: [
-                      BoxMyTasks(),
-                      BoxActiveProjects(),
-                      BoxCounter(),
+                      MyTasks(),
+                      ActiveProjects(),
+                      Counter(),
                     ],
                   ),
                 ),
